@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Form from './src/components/form'
+import PopUp from './src/components/popUp'
 
 export default class App extends Component {
 	constructor() {
@@ -6,6 +8,11 @@ export default class App extends Component {
 		this.state = {}
 	}
 	render() {
-		return <div>Hello world</div>
+		return (
+			<div className="container">
+				<Form />
+				<PopUp />
+			</div>
+		)
 	}
 }

@@ -1,0 +1,95 @@
+.popup {
+  transition: box-shadow .3s;
+  border: 1px solid #ececec;
+  position: absolute;
+  right: 25px;
+  top: 90px;
+  padding: 15px;
+  max-width: 300px;
+  border-radius: 3px;
+}
+
+.popup:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.plateformes-popup {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feelings-popup {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  margin: 0 7px 7px 0;
+  line-height: 20px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  margin: 0 7px 7px 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* feelings  */
+
+.chill-music {
+  color: #a0d911;
+  background: #fcffe6;
+  border-color: #eaff8f;
+}
+
+.random-music {
+  color: #fa541c;
+  background: #fff2e8;
+  border-color: #ffbb96;
+}
+
+.fun-music {
+  color: #faad14;
+  background: #fffbe6;
+  border-color: #ffe58f;
+}
+
+.emotional-music {
+  color: #13c2c2;
+  background: #e6fffb;
+  border-color: #87e8de;
+}
+
+/* categories */
+
+.category {
+  background-color: #2592FC;
+  color: white;
+}
+
+/* plateformes */
+
+.youtube {
+  color: #f5222d;
+  background: #fff1f0;
+  border-color: #ffa39e;
+}
+
+.deezer {
+  color: #52c41a;
+  background: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+.apple-music {
+  color: #eb2f96;
+  background: #fff0f6;
+  border-color: #ffadd2;
+}
+
+.spotify {
+  color: #1890ff;
+  background: #e6f7ff;
+  border-color: #91d5ff;
+}

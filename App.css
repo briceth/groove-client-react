@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+:root {
+  --blue: #1890ff;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 900px;
+  margin: 90px auto;
+}
+
+button, a, input[type="text"] {
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+h3 {
+  word-break: break-word;
+  line-height: 2;
+}
+
