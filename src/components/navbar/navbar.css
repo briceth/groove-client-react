@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+}
+
+.navbar div {
+  flex: 1
+}
+
+.search {
+  height: 30px;
+}

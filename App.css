@@ -9,19 +9,27 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-
+* {
+  box-sizing: border-box;
+}
 .container {
-  width: 900px;
+  width: 1095px;
   margin: 90px auto;
 }
 
 button, a, input[type="text"] {
   touch-action: manipulation;
   cursor: pointer;
+  text-decoration: none;
 }
 
 h3 {
   word-break: break-word;
   line-height: 2;
+  font-size: 20px;
+  color: #0e417b;
 }
 
+div {
+  box-sizing: border-box;
+}

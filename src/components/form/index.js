@@ -1,67 +1,39 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone'
 import './form.css'
+import { CATEGORIES, FEELINGS } from './data'
 
 export default class Form extends Component {
-	constructor() {
-		super()
-		this.state = {
-			files: []
-		}
-		this.onDrop = this.onDrop.bind(this)
+	constructor(props) {
+		super(props)
 	}
 
-	onDrop(files) {
-		this.setState({
-			files
-		})
-	}
-
-	renderCategories() {
-		const categories = [
-			'alternative',
-			'variété française',
-			'soul',
-			'rap',
-			'rap us',
-			'rap fr',
-			'jazz',
-			'gospel',
-			'disco',
-			'deep',
-			'techno',
-			'funk',
-			'rock',
-			'r&b',
-			'commercial',
-			'house',
-			'reggae',
-			'autres'
-		]
-
-		return categories.map((category, index) => {
+	renderCategories = () => {
+		return CATEGORIES.map((category, index) => {
 			return (
 				<div key={index}>
-					<input id="checkBox" type="checkbox" value={category} />
+					<input
+						id="checkBox"
+						type="checkbox"
+						value={category}
+						onChange={e => this.props.toggleCheckbox('categories', e)}
+					/>
 					<label>{category}</label>
 				</div>
 			)
 		})
 	}
 
-	renderFeelings() {
-		const feelings = [
-			'chill-music',
-			'party-music',
-			'random-music',
-			'fun-music',
-			'emotional-music'
-		]
-
-		return feelings.map((feeling, index) => {
+	renderFeelings = () => {
+		return FEELINGS.map((feeling, index) => {
 			return (
 				<div key={index}>
-					<input id="checkBox" type="checkbox" value={feeling} />
+					<input
+						id="checkBox"
+						type="checkbox"
+						value={feeling}
+						onChange={e => this.props.toggleCheckbox('feelings', e)}
+					/>
 					<label>{feeling}</label>
 				</div>
 			)
@@ -70,17 +42,42 @@ export default class Form extends Component {
 	render() {
 		return (
 			<div className="form-wrapper">
-				<form>
-					<input type="text" placeholder="titre de la chanson" />
+				<form onSubmit={this.props.handleSubmit}>
+					<input
+						type="text"
+						placeholder="titre de la chanson"
+						value={this.props.song.title}
+						onChange={e => this.props.handleChange('title', e)}
+					/>
 					<h3>Choisis les "feelings":</h3>
 					<div className="feelings-wrapper">{this.renderFeelings()}</div>
 					<h3>Choisis les catégories:</h3>
 					<div className="categories-wrapper">{this.renderCategories()}</div>
-					<input type="text" placeholder="Youtube" />
-					<input type="text" placeholder="Spotify" />
-					<input type="text" placeholder="Deezer" />
-					<input type="text" placeholder="Apple Music" />
-					<Dropzone onDrop={this.onDrop} className="upload-wrapper">
+					<input
+						type="text"
+						placeholder="Youtube"
+						value={this.props.song.youtube}
+						onChange={e => this.props.handleChange('youtube', e)}
+					/>
+					<input
+						type="text"
+						placeholder="Spotify"
+						value={this.props.song.spotify}
+						onChange={e => this.props.handleChange('spotify', e)}
+					/>
+					<input
+						type="text"
+						placeholder="Deezer"
+						value={this.props.song.deezer}
+						onChange={e => this.props.handleChange('deezer', e)}
+					/>
+					<input
+						type="text"
+						placeholder="Apple Music"
+						value={this.props.song.appleMusic}
+						onChange={e => this.props.handleChange('appleMusic', e)}
+					/>
+					<Dropzone onDrop={this.props.onDrop} className="upload-wrapper">
 						<p>
 							Try dropping some files here, or click to select files to upload.
 						</p>
@@ -88,14 +85,14 @@ export default class Form extends Component {
 					<aside>
 						<p>Dropped files</p>
 						<ul>
-							{this.state.files.map(f => (
+							{this.props.song.files.map(f => (
 								<li key={f.name}>
 									{f.name} - {f.size} bytes
 								</li>
 							))}
 						</ul>
 					</aside>
-					<button type="submit">Ho Yeah !</button>
+					<input type="submit" value="Submit" />
 				</form>
 			</div>
 		)

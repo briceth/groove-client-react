@@ -1,0 +1,74 @@
+.list-songs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.song {
+  padding: 15px;
+  margin: 15px;
+  max-width: 330px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 9px 0 rgba(44, 76, 219, 0.27);
+}
+
+p {
+  line-height: 2;
+}
+
+.song-photo {
+  border-radius: 5px;
+  margin: auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+  background-image:url(https://source.unsplash.com/collection/190727/500x300);
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: 0 3px 10px 0 rgba(44, 76, 219, 0.5);
+}
+
+.tag-img {
+  position: absolute;
+  left: 10px;
+  margin-top: 0px;
+}
+
+
+.meta {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  font-size: 18px;
+  color: white;
+}
+
+.meta div {
+  margin-right: 15px;
+}
+
+.espace {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.espace p {
+  font-size: 20px;
+}
+
+.espace svg {
+  margin-left: 5px;
+}
+
+.h3-card {
+  text-align: center;
+}
+
+.plateform {
+  width: 22px;
+  border-radius: 50%;
+}

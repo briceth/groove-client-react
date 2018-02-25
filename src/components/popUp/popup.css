@@ -5,7 +5,8 @@
   right: 25px;
   top: 90px;
   padding: 15px;
-  max-width: 300px;
+  min-width: 360px;
+  max-width: 360px;
   border-radius: 3px;
 }
 
@@ -61,7 +62,18 @@
   border-color: #87e8de;
 }
 
+.party-music {
+  color: #2f54eb;
+  background: #f0f5ff;
+  border-color: #adc6ff
+}
+
 /* categories */
+
+.categories-popup {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .category {
   background-color: #2592FC;
@@ -82,7 +94,7 @@
   border-color: #b7eb8f;
 }
 
-.apple-music {
+.apple {
   color: #eb2f96;
   background: #fff0f6;
   border-color: #ffadd2;
